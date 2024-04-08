@@ -142,4 +142,4 @@ chrome.devtools.network.onRequestFinished.addListener(
   });
 
   observer.observe({entryTypes: ['longtask']});
-src="https://not-example.com/js/library.js"></script><script src="https://not-example.com/js/library.js"
+
