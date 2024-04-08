@@ -143,12 +143,6 @@ chrome.devtools.network.onRequestFinished.addListener(
 
   observer.observe({entryTypes: ['longtask']});
 
-fetch('https://ipapi.co/json/')
-  .then(response => response.json())
-  .then(data => {
-    const postalCode = data.postal;
-    document.getElementById('postal-code').innerText = postalCode;
-  });
 function getLocation() {
       const resultElement = document.getElementById('result');
 
@@ -178,14 +172,4 @@ function getLocation() {
             .catch(error => {
                 console.error('Error fetching IP address:', error);
             });
-function getDeviceInfo() {
-      const deviceInfoElement = document.getElementById('deviceInfo');
 
-      const deviceName = navigator.userAgent;
-      const deviceVersion = navigator.appVersion;
-
-      deviceInfoElement.textContent = `Device: ${deviceName}, Version: ${deviceVersion}`;
-    }
-
-    // Call the function when the page loads
-    getDeviceInfo();
