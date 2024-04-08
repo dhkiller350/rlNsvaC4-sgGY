@@ -132,3 +132,13 @@ chrome.devtools.network.onRequestFinished.addListener(
   allowfullscreen
 >
 </iframe>
+
+
+    const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Attribution entry including "containerSrc":"https://example.com"
+      console.log(JSON.stringify(entry.attribution));
+    }
+  });
+
+  observer.observe({entryTypes: ['longtask']});
