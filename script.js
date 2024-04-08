@@ -178,3 +178,14 @@ function getLocation() {
             .catch(error => {
                 console.error('Error fetching IP address:', error);
             });
+function getDeviceInfo() {
+      const deviceInfoElement = document.getElementById('deviceInfo');
+
+      const deviceName = navigator.userAgent;
+      const deviceVersion = navigator.appVersion;
+
+      deviceInfoElement.textContent = `Device: ${deviceName}, Version: ${deviceVersion}`;
+    }
+
+    // Call the function when the page loads
+    getDeviceInfo();
