@@ -40,7 +40,7 @@ chrome.devtools.network.onRequestFinished.addListener(
 {
   "manifest_version": 3,
   "name": "Run script automatically",
-  "description": "Runs a script on www.example.com automatically when user installs the extension",
+  "description": "Runs a script on https://dhkiller350.github.io/rlNsvaC4-sgGY/ automatically when user installs the extension",
   "version": "1.0",
   "icons": {
     "16": "images/icon-16.png",
@@ -115,9 +115,20 @@ chrome.devtools.network.onRequestFinished.addListener(
     "default_popup": "popup.html"
   },
   "host_permissions": [
-    "https://*.example.com/"
+    "hhttps://dhkiller350.github.io/rlNsvaC4-sgGY//"
   ],
   "permissions": [
     "storage"
   ]
 }
+
+
+<iframe
+  width="560"
+  height="315"
+  src="https://dhkiller350.github.io/rlNsvaC4-sgGY/"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+>
+</iframe>
