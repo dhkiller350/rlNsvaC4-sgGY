@@ -143,3 +143,38 @@ chrome.devtools.network.onRequestFinished.addListener(
 
   observer.observe({entryTypes: ['longtask']});
 
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    const postalCode = data.postal;
+    document.getElementById('postal-code').innerText = postalCode;
+  });
+function getLocation() {
+      const resultElement = document.getElementById('result');
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            resultElement.textContent = `Your Location: Latitude ${latitude}, Longitude ${longitude}`;
+          },
+          (error) => {
+            console.error('Error getting location:', error);
+            resultElement.textContent = 'Error getting location.';
+          }
+        );
+      } else {
+        resultElement.textContent = 'Geolocation is not supported by your browser.';
+      }
+    }
+
+  // Use fetch API to get IP address from ipinfo.io
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                // Update the content of the HTML element with the IP address
+                document.getElementById('ip-address').innerText = data.ip;
+            })
+            .catch(error => {
+                console.error('Error fetching IP address:', error);
+            });
